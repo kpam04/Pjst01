@@ -1,0 +1,214 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #E6F2E6; /* เขียวพาสเทลอ่อน */
+    color: #333;
+}
+
+/* Header */
+header {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #6CC4A1;
+  color: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+header .logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Section titles */
+h2 {
+  font-size: 26px;
+    text-align: center;
+    font-size: 2rem;
+    color: #4F9D69; /* เขียวเข้มพาสเทล */
+    margin: 30px 0 10px;
+}
+
+h3 {
+    text-align: center; /* ชื่อการ์ดอยู่ตรงกลาง */
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+/* Dropdown Menu */
+nav ul li {
+  position: relative; /* ทำให้ submenu อยู่ภายใน li */
+}
+
+nav ul li .dropdown-menu {
+  display: none; /* ซ่อนเมนูย่อย */
+  position: absolute;
+  top: 100%; /* อยู่ใต้ li */
+  left: 0;
+  background: #6CC4A1;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+nav ul li .dropdown-menu li {
+  padding: 0;
+}
+
+nav ul li .dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: normal;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li .dropdown-menu li a:hover {
+  background: #ff6699;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* แสดง dropdown เมื่อ hover */
+nav ul li:hover > .dropdown-menu {
+  display: block;
+}
+/* Breadcrumb */
+.breadcrumb {
+    padding: 15px 50px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Section intro paragraph */
+.intro {
+    text-align: center;
+    margin: 10px auto 30px;
+    max-width: 800px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* Card container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0 40px 40px;
+}
+
+/* Individual card */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+    border: 2px solid #7FC29A;
+}
+
+/* Card images */
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card titles */
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Card descriptions */
+.card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Pros-Cons list */
+.pros-cons {
+    text-align: left;
+    margin-top: 10px;
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #7FC29A;
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}

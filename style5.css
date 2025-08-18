@@ -1,0 +1,199 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  background: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #6CC4A1;
+  color: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+header .logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+/* Dropdown Menu */
+nav ul li {
+  position: relative; /* ทำให้ submenu อยู่ภายใน li */
+}
+
+nav ul li .dropdown-menu {
+  display: none; /* ซ่อนเมนูย่อย */
+  position: absolute;
+  top: 100%; /* อยู่ใต้ li */
+  left: 0;
+  background: #6CC4A1;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+nav ul li .dropdown-menu li {
+  padding: 0;
+}
+
+nav ul li .dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: normal;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li .dropdown-menu li a:hover {
+  background: #ff6699;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* แสดง dropdown เมื่อ hover */
+nav ul li:hover > .dropdown-menu {
+  display: block;
+}
+/* Breadcrumb */
+.breadcrumb {
+    padding: 15px 50px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Section */
+.section {
+    padding: 40px 50px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4CAF50;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #45A049;
+}
+
+/* Other Contact Info */
+.section p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.section a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #B7E4C7;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    .breadcrumb, .section {
+        padding: 20px;
+    }
+
+    header nav ul.menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

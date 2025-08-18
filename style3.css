@@ -1,0 +1,193 @@
+/* Reset */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  background: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #6CC4A1;
+  color: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+header .logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
+/* Dropdown Menu */
+nav ul li {
+  position: relative; /* ทำให้ submenu อยู่ภายใน li */
+}
+
+nav ul li .dropdown-menu {
+  display: none; /* ซ่อนเมนูย่อย */
+  position: absolute;
+  top: 100%; /* อยู่ใต้ li */
+  left: 0;
+  background: #6CC4A1;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+nav ul li .dropdown-menu li {
+  padding: 0;
+}
+
+nav ul li .dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  font-weight: normal;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li .dropdown-menu li a:hover {
+  background: #ff6699;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* แสดง dropdown เมื่อ hover */
+nav ul li:hover > .dropdown-menu {
+  display: block;
+}
+
+/* Pet Intro */
+.pet-intro {
+  text-align: center;
+  margin: 40px 20px 20px;
+}
+
+.pet-intro h2 {
+  font-size: 2rem;
+  color: #ff6699;
+}
+
+.pet-intro .pet-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Layout การ์ด */
+.pet-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 คอลัมน์ สำหรับ desktop */
+  gap: 20px;
+  padding: 30px;
+}
+
+/* การ์ด */
+.pet-cards a.card {
+  display: block;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  text-decoration: none; /* เอา underline ออก */
+  color: inherit;
+  border: 2px solid transparent;
+}
+
+/* Hover effect */
+.pet-cards a.card:hover {
+  transform: translateY(-10px); /* ยกขึ้น */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* เงาชัดขึ้น */
+  border: 2px solid #ff6699; /* เปลี่ยนสีขอบ */
+}
+
+/* รูปภาพในการ์ดเป็นวงกลม */
+.pet-cards a.card img {
+  width: 150px;           /* กำหนดขนาดความกว้าง */
+  height: 150px;          /* ความสูงเท่ากับความกว้าง */
+  object-fit: cover;      /* ตัดรูปให้เต็มกรอบ */
+  border-radius: 50%;     /* ทำให้เป็นวงกลม */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+/* ชื่อสัตว์ */
+.pet-cards a.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* คำอธิบาย */
+.pet-cards a.card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ปุ่มดูรายละเอียด */
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #6CC4A1;
+  color: #fff;
+  margin-top: 30px;
+}
+
+/* Responsive สำหรับ tablet และมือถือ */
+@media screen and (max-width: 992px) {
+  .pet-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pet-cards {
+    grid-template-columns: 1fr; /* 1 คอลัมน์ สำหรับมือถือเล็ก */
+  }
+}

@@ -1,0 +1,126 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #E6F2E6, #C8E6C9); /* เขียวพาสเทลไล่เฉดอ่อน → เข้ม */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #7FC29A; /* เขียวพาสเทลเข้มขึ้นเล็กน้อย */
+  color: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+header .logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+/* Split Screen Layout */
+.split-container {
+    display: flex;
+    height: calc(100vh - 80px); /* ลบส่วน header ออก */
+}
+
+/* Left side (image) */
+.split.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A7D8FF; /* ฟ้าพาสเทล */
+}
+
+.split.left .pet-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right side (text + button) */
+.split.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #DFF2DF; /* ครีมอ่อน */
+    text-align: center;
+}
+
+.split.right p {
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Button */
+.split.right .btn {
+    font-size: 16px;
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #A3D9A5, #7FC29A); /* เขียวพาสเทลอ่อน → เขียวพาสเทลเข้ม */
+    color: #fff;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Hover effect */
+.split.right .btn:hover {
+    background: linear-gradient(135deg, #7FC29A, #5DA973); /* เขียวพาสเทลเข้มขึ้น */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Responsive (Mobile) */
+@media screen and (max-width: 900px) {
+    .split-container {
+        flex-direction: column;
+    }
+
+    .split.left,
+    .split.right {
+        flex: none;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .split.right {
+        padding: 30px;
+    }
+}
