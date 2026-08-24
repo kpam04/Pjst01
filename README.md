@@ -44,12 +44,4 @@ Pjst01-main/
 
 โปรเจกต์นี้เป็นเว็บไซต์แบบ static ไม่ต้องติดตั้ง dependency ใด ๆ
 
-1. Clone repository นี้
-   ```bash
-   git clone https://github.com/kpam04/Pjst01.git
-   ```
-2. เปิดไฟล์ `Home.html` ด้วยเว็บเบราว์เซอร์ เพื่อเริ่มใช้งาน
 
-## 📄 License
-
-โปรเจกต์นี้เป็นส่วนหนึ่งของงานการศึกษา (school project)
